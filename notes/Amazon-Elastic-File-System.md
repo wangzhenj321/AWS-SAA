@@ -17,3 +17,15 @@ Performance and throughput modes:
 - Max I/O performance mode
 - Provisioned Throughput mode
 - Bursting Throughput mode
+
+## Amazon EFS with Standard storage classes
+
+![](../imgs/Amazon-Elastic-File-System/efs-ec2-how-it-works-Standard.png)
+
+## Amazon EFS with One Zone storage classes
+
+![](../imgs/Amazon-Elastic-File-System/efs-ec2-how-it-works-OneZone.png)
+
+## How Amazon EFS works with AWS Direct Connect and AWS Managed VPN
+
+![](../imgs/Amazon-Elastic-File-System/efs-directconnect-how-it-works.png)
