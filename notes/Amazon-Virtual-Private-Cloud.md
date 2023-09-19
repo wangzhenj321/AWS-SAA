@@ -1,8 +1,6 @@
-# Amazon Virtual Private Cloud
+# Amazon VPC
 
-## Amazon VPC
-
-### Connect your VPC to other networks
+## Connect your VPC to other networks
 
 - internet gateway
 
@@ -40,11 +38,13 @@
 
     A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Resources in peered VPCs can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in a different AWS Region. Traffic between peered VPCs never traverses the public internet.
 
-## AWS PrivateLink
+# AWS PrivateLink
 
 AWS PrivateLink is a highly available, scalable technology that you can use to privately connect your VPC to services as if they were in your VPC. You do not need to use an internet gateway, NAT device, public IP address, AWS Direct Connect connection, or AWS Site-to-Site VPN connection to allow communication with the service from your private subnets. Therefore, you control the specific API endpoints, sites, and services that are reachable from your VPC.
 
-### VPC endpoints
+![](../imgs/Amazon-Virtual-Private-Cloud/use-cases-PrivateLink.png)
+
+## VPC endpoints
 
 A service consumer creates a VPC endpoint to connect their VPC to an endpoint service.
 
