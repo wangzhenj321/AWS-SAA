@@ -119,3 +119,33 @@ You can use Amazon S3 to host a static website. On a static website, individual 
 ## AWS PrivateLink for Amazon S3
 
 You can use two types of VPC endpoints to access Amazon S3: gateway endpoints and interface endpoints (by using AWS PrivateLink). A gateway endpoint is a gateway that you specify in your route table to access Amazon S3 from your VPC over the AWS network. Interface endpoints extend the functionality of gateway endpoints by using private IP addresses to route requests to Amazon S3 from within your VPC, on premises, or from a VPC in another AWS Region by using VPC peering or AWS Transit Gateway.
+
+## Protecting data with encryption
+
+Data protection refers to protecting data while it's in transit (as it travels to and from Amazon S3) and at rest (while it is stored on disks in Amazon S3 data centers). You can protect data in transit by using Secure Socket Layer/Transport Layer Security (SSL/TLS) or client-side encryption.
+
+For protecting data at rest in Amazon S3, you have the following options:
+
+- Server-side encryption
+
+    Amazon S3 encrypts your objects before saving them on disks in AWS data centers and then decrypts the objects when you download them.
+
+    - Server-side encryption with Amazon S3 managed keys (SSE-S3)
+
+        Each object is encrypted with a unique key. As an additional safeguard, SSE-S3 encrypts the key itself with a root key that it regularly rotates.
+
+    - Server-side encryption with AWS Key Management Service (AWS KMS) keys (SSE-KMS)
+
+        Server-side encryption with AWS KMS keys (SSE-KMS) is provided through an integration of the AWS KMS service with Amazon S3. With AWS KMS, you have more control over your keys. Additionally, you can create and manage customer managed keys or use AWS managed keys that are unique to you, your service, and your Region.
+
+    - Dual-layer server-side encryption with AWS Key Management Service (AWS KMS) keys (DSSE-KMS)
+
+        Dual-layer server-side encryption with AWS KMS keys (DSSE-KMS) is similar to SSE-KMS, but DSSE-KMS applies two individual layers of object-level encryption instead of one layer. Because both layers of encryption are applied to an object on the server side, you can use a wide range of AWS services and tools to analyze data in S3 while using an encryption method that can satisfy your compliance requirements.
+
+    - Server-side encryption with customer-provided keys (SSE-C)
+
+        With server-side encryption with customer-provided keys (SSE-C), you manage the encryption keys, and Amazon S3 manages the encryption as it writes to disks and the decryption when you access your objects.
+
+- Client-side encryption
+
+    You encrypt your data client-side and upload the encrypted data to Amazon S3. In this case, you manage the encryption process, encryption keys, and related tools.
