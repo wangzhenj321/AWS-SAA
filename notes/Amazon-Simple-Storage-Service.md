@@ -56,7 +56,12 @@ The following section explains the different automatic and optional access tiers
 To manage your objects so that they are stored cost effectively throughout their lifecycle, configure their *Amazon S3 Lifecycle*. An *S3 Lifecycle configuration* is a set of rules that define actions that Amazon S3 applies to a group of objects. There are two types of actions:
 
 - Transition actions
+
+    These actions define when objects transition to another storage class.
+
 - Expiration actions
+
+    These actions define when objects expire.
 
 ## S3 Object Lock
 
@@ -65,7 +70,12 @@ With S3 Object Lock, you can store objects using a *write-once-read-many* (WORM)
 Object Lock provides two ways to manage object retention:
 
 - Retention period
+
+    Specifies a fixed period of time during which an object remains locked. During this period, your object is WORM-protected and can't be overwritten or deleted.
+
 - Legal hold
+
+    Provides the same protection as a retention period, but it has no expiration date. Instead, a legal hold remains in place until you explicitly remove it. Legal holds are independent from retention periods.
 
 Object Lock works only in versioned buckets, and retention periods and legal holds apply to individual object versions. When you lock an object version, Amazon S3 stores the lock information in the metadata for that object version. Placing a retention period or legal hold on an object protects only the version specified in the request. It doesn't prevent new versions of the object from being created.
 
@@ -92,11 +102,11 @@ You can use S3 Batch Operations to perform large-scale batch operations on Amazo
 
 Amazon S3 Transfer Acceleration is a bucket-level feature that enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. Transfer Acceleration is designed to optimize transfer speeds from across the world into S3 buckets. Transfer Acceleration takes advantage of the globally distributed edge locations in Amazon CloudFront. As the data arrives at an edge location, the data is routed to Amazon S3 over an optimized network path.
 
-## presigned URLs
+## Working with presigned URLs
 
 You can use presigned URLs to grant time-limited access to objects in Amazon S3 without updating your bucket policy. You can also use presigned URLs to allow someone to upload a specific object to your Amazon S3 bucket.
 
-## access points
+## Working with access points
 
 Amazon S3 access points simplify data access for any AWS service or customer application that stores data in S3. Access points are named network endpoints that are attached to buckets that you can use to perform S3 object operations, such as `GetObject` and `PutObject`. Each access point has distinct permissions and network controls that S3 applies for any request that is made through that access point. Each access point enforces a customized access point policy that works in conjunction with the bucket policy that is attached to the underlying bucket.
 
@@ -104,11 +114,11 @@ Amazon S3 access points simplify data access for any AWS service or customer app
 
 Amazon S3 Multi-Region Access Points provide a global endpoint that applications can use to fulfill requests from S3 buckets that are located in multiple AWS Regions. You can use Multi-Region Access Points to build multi-Region applications with the same architecture that's used in a single Region, and then run those applications anywhere in the world. Instead of sending requests over the congested public internet, Multi-Region Access Points provide built-in network resilience with acceleration of internet-based requests to Amazon S3. Application requests made to a Multi-Region Access Point global endpoint use AWS Global Accelerator to automatically route over the AWS global network to the closest-proximity S3 bucket with an active routing status.
 
-## versioning
+## Using versioning in S3 buckets
 
 Versioning in Amazon S3 is a means of keeping multiple variants of an object in the same bucket. You can use the S3 Versioning feature to preserve, retrieve, and restore every version of every object stored in your buckets. With versioning you can recover more easily from both unintended user actions and application failures. After versioning is enabled for a bucket, if Amazon S3 receives multiple write requests for the same object simultaneously, it stores all of those objects.
 
-## cross-origin resource sharing (CORS)
+## Using cross-origin resource sharing (CORS)
 
 Cross-origin resource sharing (CORS) defines a way for client web applications that are loaded in one domain to interact with resources in a different domain. With CORS support, you can build rich client-side web applications with Amazon S3 and selectively allow cross-origin access to your Amazon S3 resources.
 
@@ -118,7 +128,11 @@ You can use Amazon S3 to host a static website. On a static website, individual 
 
 ## AWS PrivateLink for Amazon S3
 
-You can use two types of VPC endpoints to access Amazon S3: gateway endpoints and interface endpoints (by using AWS PrivateLink). A gateway endpoint is a gateway that you specify in your route table to access Amazon S3 from your VPC over the AWS network. Interface endpoints extend the functionality of gateway endpoints by using private IP addresses to route requests to Amazon S3 from within your VPC, on premises, or from a VPC in another AWS Region by using VPC peering or AWS Transit Gateway.
+You can use two types of VPC endpoints to access Amazon S3: gateway endpoints and interface endpoints (by using AWS PrivateLink).
+
+A gateway endpoint is a gateway that you specify in your route table to access Amazon S3 from your VPC over the AWS network.
+
+Interface endpoints extend the functionality of gateway endpoints by using private IP addresses to route requests to Amazon S3 from within your VPC, on premises, or from a VPC in another AWS Region by using VPC peering or AWS Transit Gateway.
 
 ## Protecting data with encryption
 
