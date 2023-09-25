@@ -28,6 +28,10 @@ A *read replica* is a read-only copy of a DB instance. You can reduce the load o
 
 ![](../imgs/Amazon-RDS-and-Aurora/read-replica.png)
 
+### Creating a read replica in a different AWS Region
+
+![](../imgs/Amazon-RDS-and-Aurora/read-replica-cross-region.png)
+
 ## Multi-AZ deployment
 
 Multi-AZ deployments can have one standby or two standby DB instances.
