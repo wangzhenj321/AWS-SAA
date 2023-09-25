@@ -21,3 +21,11 @@ You also get increased reliability and availability because copies of your files
     - Require users to access content using CloudFront signed URLs or signed cookies
     - Set up field-level encryption for specific content fields
     - Use AWS WAF to control access to your content
+
+## CloudFront use cases
+
+- Accelerate static website content delivery
+- Serve video on demand or live streaming video
+- Encrypt specific fields throughout system processing
+- Customize at the edge
+- Serve private content by using Lambda@Edge customizations
